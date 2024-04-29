@@ -18,19 +18,30 @@ body {
 
 .container {
     background: teal;
-    /* background: rgb(252, 252, 252); */
-    padding: 20px;
-    border-radius: 8px;
-    height: 60%;
-    border: 1px solid gainsboro;
+    border-radius: 12px;
+    padding: 25px;
+    height: 65%;
     overflow: scroll;
 }
 
-h1 {
-    padding: 2px 0 20px 0;
-    /* color: #0062ff; */
-    color: white;
+.header {
+    display: flex;
+    justify-content: center;
+    justify-content: center;
     text-align: center;
+    gap: 8px;
+    padding: 2px 0;
+}
+
+.header svg {
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+
+h1 {
+    padding-bottom: 20px;
+    color: white;
 }
 
 .taskDiv {
@@ -45,14 +56,12 @@ h1 {
     height: 2.8rem;
     width: 300px;
     padding: 0 10px;
-    border: 1px solid rgb(229, 229, 229);
     border-radius: 5px;
     font-size: 15px;
 }
 
 .taskDiv button {
-    background: #3B82F6;
-    color: white;
+    background: white;
     height: 2.8rem;
     width: 3.5rem;
     padding: 0 5px;
@@ -60,23 +69,14 @@ h1 {
     border-radius: 5px;
     font-size: 15px;
     cursor: pointer;
+    font-weight: bold;
+    color: #ff4d39;
 }
 
 .taskDiv button:hover {
-    background: #0062ff;
-}
+    background: rgb(245, 245, 245);
+    color: #FF7160;
 
-.list-item {
-    background: white;
-    padding: 10px 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: 1px solid gainsboro;
-    font-family: "Poppins", sans-serif;
-    font-size: 15px;
 }
 
 #listContainer {
@@ -84,7 +84,23 @@ h1 {
     justify-content: center;
     flex-direction: column;
     gap: 8px;
+    position: relative;
 }
+
+.list-item {
+    background: white;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid gainsboro;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    position: relative;
+}
+
 
 #listContainer li span {
     cursor: pointer;
@@ -94,11 +110,32 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
     font-size: 15px;
     font-weight: bold;
+    right: 10px;
 }
 
 #listContainer li span:hover {
     background: rgb(239, 239, 239);
     color: red;
+}
+
+#listContainer li::before {
+    content: '';
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+    background-image: url('images/unchecked.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#listContainer li.checked::before {
+    background-image: url('images/checked.png');
+}
+
+.checked {
+    color: rgb(89, 89, 89);
+    text-decoration: line-through;
 }
