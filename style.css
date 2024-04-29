@@ -139,3 +139,10 @@ h1 {
     color: rgb(89, 89, 89);
     text-decoration: line-through;
 }
+
+@media screen and (max-width:360px) {
+    .container {
+        width: 320px;
+        height: 70%;
+    }
+}
