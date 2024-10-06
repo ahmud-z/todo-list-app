@@ -22,7 +22,7 @@ body {
     border-radius: 12px;
     padding: 25px;
     height: 65%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .header {
