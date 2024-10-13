@@ -26,6 +26,7 @@ body::-webkit-scrollbar-thumb{
     padding: 25px;
     height: 65%;
     overflow-y: scroll;
+    border: 1px solid gray;
 }
 
 .header {
